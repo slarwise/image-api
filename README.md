@@ -7,7 +7,7 @@ API instead of a CLI.
 
 Listing tags is the only supported functionality at the moment.
 
-## Usage
+## Run it locally
 
 ```bash
 # Start the server on port 8080
@@ -24,4 +24,30 @@ Example output:
 
 ```json
 ["latest", "0.0.3", "0.0.2", "0.0.1"]
+```
+
+## Run on kubernetes
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: skopeo-api
+  labels:
+    app: skopeo-api
+spec:
+  selector:
+    matchLabels:
+      app: skopeo-api
+  template:
+    metadata:
+      labels:
+        app: skopeo-api
+    spec:
+      containers:
+        - name: skopeo-api
+          image: ghcr.io/slarwise/skopeo-api:0.0.1
+          ports:
+            - containerPort: 8080
+              name: http
 ```

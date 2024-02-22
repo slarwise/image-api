@@ -1,0 +1,28 @@
+openapi: 3.0.0
+info:
+  title: Skopeo API
+  description: This API allows fetching information about container images.
+  version: 0.0.1
+paths:
+  /tags/{imageRepo}:
+    parameters:
+      - name: imageRepo
+        description: The image repository
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ghcr.io%2Fslarwise%2Fskopeo-api
+    get:
+      summary: List tags
+      description: List the tags of the given image repository.
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  example: "0.0.1"

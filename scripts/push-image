@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ "$#" -ne 1 ]]; then
+    echo "Error: Must supply exactly one argument with the image tag, got ${#} args"
+    exit 1
+fi
+
+TAG="$1"
+
+docker push "ghcr.io/slarwise/skopeo-api:${TAG}"

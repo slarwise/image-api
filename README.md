@@ -8,10 +8,14 @@ API instead of a CLI.
 ## Usage
 
 ```bash
+# Start the server on port 8080
 go run ./main.go
 
-# Second terminal
-curl http://localhost:8080/tags/:image-repo
+# List the tags for an image repository
+# Escape the slashes
+curl http://localhost:8080/tags/ghcr.io%2Fslarwise%2Fskopeo-api
+curl http://localhost:8080/tags/docker.elastic.co%2Felasticsearch%2Felasticsearch
+curl http://localhost:8080/tags/rancher%2Ffleet
 ```
 
 Example output:

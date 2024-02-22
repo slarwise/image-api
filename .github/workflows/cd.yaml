@@ -20,6 +20,12 @@ jobs:
         run: |
           TAG="$(git tag --contains HEAD)"
           echo "TAG=${TAG}" >> "$GITHUB_ENV"
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build image
         run: ./scripts/build-image "$TAG"
       - name: Push image

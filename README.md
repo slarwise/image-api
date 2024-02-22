@@ -5,6 +5,8 @@ with images. `skopeo-api` uses the same library that `skopeo` uses,
 [containers/image](https://github.com/containers/image), but provides an HTTP
 API instead of a CLI.
 
+Listing tags is the only supported functionality at the moment.
+
 ## Usage
 
 ```bash

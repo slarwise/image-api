@@ -7,4 +7,4 @@ fi
 
 TAG="$1"
 
-docker push "ghcr.io/slarwise/skopeo-api:${TAG}"
+docker push "ghcr.io/slarwise/image-api:${TAG}"

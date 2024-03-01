@@ -6,4 +6,4 @@ if [[ "$#" -ne 1 ]]; then
 fi
 
 TAG="$1"
-docker build --tag "ghcr.io/slarwise/skopeo-api:${TAG}" .
+docker build --tag "ghcr.io/slarwise/image-api:${TAG}" .
